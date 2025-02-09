@@ -1,0 +1,8 @@
+  mongo DB AGGREGATION PIPELINE:
+ =>  extermely useful mongoDB framework for data aggregation. 
+ =>  Basic Idea is to create a pipeline that all the data from a certain collection go through where they are processed 
+     step by step inorder to transform them into aggregated results 
+ => For Example we can use Aggregated PIPELINEs in order to calc averages or min or max values and also alot of stuff that we can do 
+ => aggregation pipeline really is a mongoDB feature but moongoose has access to it.
+ => using the aggregation pipeline is a bit like using a query, difference is that in aggregation we can manipulate the data 
+ => in couple of different steps 
