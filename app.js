@@ -1,6 +1,5 @@
 // its the convention to have all the express configs in app.js or index.js in my case
 const express = require("express");
-const { status } = require("express/lib/response");
 const morgan = require("morgan");
 const tourRouter = require("./dev-data/routes/tourRoutes");
 const userRouter = require("./dev-data/routes/userRoutes");
