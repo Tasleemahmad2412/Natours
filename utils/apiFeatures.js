@@ -23,11 +23,11 @@ class APIFeatures {
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
     // console.log(req.query, queryObj);
-    console.log(JSON.parse(queryStr));
+    // console.log(JSON.parse(queryStr));
     // Recommended way that we start chaining the special mongoose methods to build the query
     // let query = Tour.find(JSON.parse(queryStr));
     this.query = this.query.find(JSON.parse(queryStr));
-    console.log(this.query, this.queryString, this);
+    // console.log(this.query, this.queryString, this);
     return this;
   }
 

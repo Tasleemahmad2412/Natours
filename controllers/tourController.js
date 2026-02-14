@@ -10,7 +10,7 @@ exports.aliasTopTours = (req, res, next) => {
   next();
 };
 
-exports.getAllTours = catchAsync(async (req, res, next) => {
+exports.getAllTours = catchAsync(async (req, res) => {
   // 5) API ALIASING
   // it is a route that specifically gives user the specific results like it will give the tours with top 5 and cheapest
   // which means that we will perform different filters and sort or maybe limit features
@@ -46,7 +46,7 @@ exports.getTour = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.createTour = catchAsync(async (req, res, next) => {
+exports.createTour = catchAsync(async (req, res) => {
   const newTour = await Tour.create(req.body);
 
   res.status(201).json({
@@ -88,9 +88,9 @@ exports.deleteTour = catchAsync(async (req, res, next) => {
   });
 });
 
-// reating AGGREGATED PIPELINE
+// creating AGGREGATED PIPELINE
 // creating a helper function that is gonna calculate a couple of stats about tours
-exports.getTourStats = catchAsync(async (req, res, next) => {
+exports.getTourStats = catchAsync(async (req, res) => {
   // * we pass in an array of so called stages in aggregation, then the document will pass one by one through these stages
   // * in defined sequence
 
@@ -131,7 +131,7 @@ exports.getTourStats = catchAsync(async (req, res, next) => {
 // TODO: OBJECTIVE: lets say we are developing this applucation for the real business need and they asked us to implement a function
 // TODO: that calculates the busiest month of the given year so we will implement this function with aggregation
 
-exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
+exports.getMonthlyPlan = catchAsync(async (req, res) => {
   const year = req.params.year * 1;
 
   const plan = await Tour.aggregate([
